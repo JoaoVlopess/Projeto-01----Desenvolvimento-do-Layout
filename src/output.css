@@ -402,6 +402,18 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-0 {
+    height: calc(var(--spacing) * 0);
+  }
+  .h-0\.5 {
+    height: calc(var(--spacing) * 0.5);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
   .h-\[30px\] {
     height: 30px;
   }
@@ -422,6 +434,24 @@
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
+  }
+  .w-38 {
+    width: calc(var(--spacing) * 38);
+  }
+  .w-39 {
+    width: calc(var(--spacing) * 39);
+  }
+  .w-40 {
+    width: calc(var(--spacing) * 40);
+  }
+  .w-43 {
+    width: calc(var(--spacing) * 43);
+  }
+  .w-86 {
+    width: calc(var(--spacing) * 86);
+  }
+  .w-89 {
+    width: calc(var(--spacing) * 89);
   }
   .w-screen {
     width: 100vw;
@@ -1032,9 +1062,6 @@
   .bg-\[\#6220C1\] {
     background-color: #6220C1;
   }
-  .bg-\[\#\] {
-    background-color: #;
-  }
   .bg-\[color\:var\(--my-color\)\] {
     background-color: var(--my-color);
   }
@@ -1221,6 +1248,30 @@
   }
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .px-64 {
+    padding-inline: calc(var(--spacing) * 64);
+  }
+  .px-96 {
+    padding-inline: calc(var(--spacing) * 96);
+  }
+  .px-\[459px\] {
+    padding-inline: 459px;
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-48 {
+    padding-block: calc(var(--spacing) * 48);
   }
   .text-center {
     text-align: center;
