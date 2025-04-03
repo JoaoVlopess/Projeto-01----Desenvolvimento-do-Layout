@@ -11,14 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <section class="mb-20">
         <div
             class="w-screen h-[30px] bg-[#005CFF] text-white flex justify-center items-center font-['Nunito_Sans'] text-[14px] font-bold">
@@ -92,23 +95,173 @@
             </div>
         </div>
 
-        <div class="w-screen h-[500px] bg-[#E7E7EA] flex items-center justify-center overflow-hidden relative font-['Nunito']">
-            <img 
-                class=" scale-[2] h-full object-cover -translate-y-32 ml-44"
-                src="/public/img/cadeira-removebg-preview.png" 
-                alt="Imagem Centralizada">
+        <div
+            class="w-screen h-[500px] bg-[#E7E7EA] flex items-center justify-center overflow-hidden relative font-['Nunito']">
+            <img class=" scale-[2] h-full object-cover -translate-y-32 ml-44"
+                src="/public/img/cadeira-removebg-preview.png" alt="Imagem Centralizada">
 
-                <div class="flex flex-col items-center ml-44">
-                    <p class="uppercase font-bold text-8xl mb-4">Super<span class="uppercase font-light text-8xl ">SALE</span></p>
-                    <p class="uppercase font-medium text-[#005CFF] text-3xl mb-5" >Itens selecionados com até</p>
-                    <p class="uppercase font-bold text-5xl text-[#005CFF]">50%off</p>
-                </div>
+            <div class="flex flex-col items-center ml-44">
+                <p class="uppercase font-bold text-8xl mb-4">Super<span
+                        class="uppercase font-light text-8xl ">SALE</span></p>
+                <p class="uppercase font-medium text-[#005CFF] text-3xl mb-5">Itens selecionados com até</p>
+                <p class="uppercase font-bold text-5xl text-[#005CFF]">50%off</p>
+            </div>
         </div>
     </section>
 
-    <section>
+    </section class="px-48 bg-white">
+    <div class="flex flex-col px-48">
+        <div class="flex justify-between">
+            <p class="font-bold text-xl">Lançamentos</p>
+            <p class="font-medium text-sm text-gray-800">ver mais</p>
+        </div>
+        <div class="swiper mySwiper w-full h-auto mt-5">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="border pt-2 pb-3 rounded-2xl font-['Nunito'] ">
+                        <img 
+                        class="w-56 h-56"
+                        src="/public/img/modelo.png" 
+                        alt="Imagem 1">
+                        <p class="bg-[#00264E] text-white absolute -top-1 -left m-3 px-1.5 py-1 rounded-md text-xs">NOVO</p>
+                        <div class="px-2 flex flex-col">
+                            <h3 class="text-sm py-1.5"> Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="flex gap-2">
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-xs text-gray-800"><s>R$ 100,00</s></p>
+                                    <p class="text-base font-medium">R$79,90</p>
+                                </div>
+                                <p class="self-center text-white bg-[#5EC0BE] px-2 py-0.5 rounded-md text-xs justify-self-center"><u>10% OFF</u></p>
+                            </div>
+                            <p>Ou em até <span class="font-bold text-sm ">10x de R$ 7,90</span></p>
+                            <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg mt-2">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="border pt-2 pb-3 rounded-2xl font-['Nunito'] ">
+                        <img 
+                        class="w-56 h-56"
+                        src="/public/img/modelo.png" 
+                        alt="Imagem 1">
+                        <p class="bg-[#00264E] text-white absolute -top-1 -left m-3 px-1.5 py-1 rounded-md text-xs">NOVO</p>
+                        <div class="px-2 flex flex-col">
+                            <h3 class="text-sm py-1.5"> Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="flex gap-2">
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-xs text-gray-800"><s>R$ 100,00</s></p>
+                                    <p class="text-base font-medium">R$79,90</p>
+                                </div>
+                                <p class="self-center text-white bg-[#5EC0BE] px-2 py-0.5 rounded-md text-xs justify-self-center"><u>10% OFF</u></p>
+                            </div>
+                            <p>Ou em até <span class="font-bold text-sm ">10x de R$ 7,90</span></p>
+                            <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg mt-2">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="border pt-2 pb-3 rounded-2xl font-['Nunito'] ">
+                        <img 
+                        class="w-56 h-56"
+                        src="/public/img/modelo.png" 
+                        alt="Imagem 1">
+                        <p class="bg-[#00264E] text-white absolute -top-1 -left m-3 px-1.5 py-1 rounded-md text-xs">NOVO</p>
+                        <div class="px-2 flex flex-col">
+                            <h3 class="text-sm py-1.5"> Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="flex gap-2">
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-xs text-gray-800"><s>R$ 100,00</s></p>
+                                    <p class="text-base font-medium">R$79,90</p>
+                                </div>
+                                <p class="self-center text-white bg-[#5EC0BE] px-2 py-0.5 rounded-md text-xs justify-self-center"><u>10% OFF</u></p>
+                            </div>
+                            <p>Ou em até <span class="font-bold text-sm ">10x de R$ 7,90</span></p>
+                            <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg mt-2">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="border pt-2 pb-3 rounded-2xl font-['Nunito'] ">
+                        <img 
+                        class="w-56 h-56"
+                        src="/public/img/modelo.png" 
+                        alt="Imagem 1">
+                        <p class="bg-[#00264E] text-white absolute -top-1 -left m-3 px-1.5 py-1 rounded-md text-xs">NOVO</p>
+                        <div class="px-2 flex flex-col">
+                            <h3 class="text-sm py-1.5"> Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="flex gap-2">
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-xs text-gray-800"><s>R$ 100,00</s></p>
+                                    <p class="text-base font-medium">R$79,90</p>
+                                </div>
+                                <p class="self-center text-white bg-[#5EC0BE] px-2 py-0.5 rounded-md text-xs justify-self-center"><u>10% OFF</u></p>
+                            </div>
+                            <p>Ou em até <span class="font-bold text-sm ">10x de R$ 7,90</span></p>
+                            <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg mt-2">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="border pt-2 pb-3 rounded-2xl font-['Nunito'] ">
+                        <img 
+                        class="w-56 h-56"
+                        src="/public/img/modelo.png" 
+                        alt="Imagem 1">
+                        <p class="bg-[#00264E] text-white absolute -top-1 -left m-3 px-1.5 py-1 rounded-md text-xs">NOVO</p>
+                        <div class="px-2 flex flex-col">
+                            <h3 class="text-sm py-1.5"> Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="flex gap-2">
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-xs text-gray-800"><s>R$ 100,00</s></p>
+                                    <p class="text-base font-medium">R$79,90</p>
+                                </div>
+                                <p class="self-center text-white bg-[#5EC0BE] px-2 py-0.5 rounded-md text-xs justify-self-center"><u>10% OFF</u></p>
+                            </div>
+                            <p>Ou em até <span class="font-bold text-sm ">10x de R$ 7,90</span></p>
+                            <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg mt-2">Comprar</button>
+                        </div>
+                    </div>
+                </div>            
+                <div class="swiper-slide">
+                    <div class="border pt-2 pb-3 rounded-2xl font-['Nunito'] ">
+                        <img 
+                        class="w-56 h-56"
+                        src="/public/img/modelo.png" 
+                        alt="Imagem 1">
+                        <p class="bg-[#00264E] text-white absolute -top-1 -left m-3 px-1.5 py-1 rounded-md text-xs">NOVO</p>
+                        <div class="px-2 flex flex-col">
+                            <h3 class="text-sm py-1.5"> Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="flex gap-2">
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-xs text-gray-800"><s>R$ 100,00</s></p>
+                                    <p class="text-base font-medium">R$79,90</p>
+                                </div>
+                                <p class="self-center text-white bg-[#5EC0BE] px-2 py-0.5 rounded-md text-xs justify-self-center"><u>10% OFF</u></p>
+                            </div>
+                            <p>Ou em até <span class="font-bold text-sm ">10x de R$ 7,90</span></p>
+                            <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg mt-2">Comprar</button>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+
+            <!-- Botões de Navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Paginação -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+    <div class=""></div>
 
     </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
 </body>
 
 </html>
