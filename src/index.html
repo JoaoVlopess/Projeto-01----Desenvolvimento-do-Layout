@@ -24,7 +24,7 @@
 <body class="overflow-x-hidden">
     <section class="mb-20">
         <div
-            class="w-screen h-[30px] bg-[#005CFF] text-white flex justify-center items-center font-['Nunito_Sans'] text-[14px] font-bold">
+            class="w-screen p-3 py-1.5 px-3 bg-[#005CFF] text-white flex justify-center items-center font-['Nunito_Sans'] text-sm font-bold text-center">
             <p class="m-0">
                 Ganhe <span class="bg-[#6220C1] px-1.5 rounded-md font-normal">R$10,00</span> de desconto no seu
                 primeiro pedido.
@@ -34,14 +34,16 @@
         </div>
 
 
-        <div class="flex px-10 lg:px-48 py-5 gap-8 lg:gap-32 items-center">
+        <div class="flex px-10 lg:px-20 2xl:px-48 py-5 gap-8 lg:gap-32 items-center justify-between ">
 
-            <div class="flex flex-1 gap-14 items-center">
+            <i class="bi bi-list scale-[2] md:hidden"></i>
+
+            <div class="flex md:flex-1 md:gap-14 items-center">
                 <div>
                     <img class="w-39 h-7" src="/public/img/attachment.png" alt="Logo avanti">
                 </div>
 
-                <div class="flex flex-1 border pr-2 pl-5 rounded-lg items-center text-[14px] max-w-[60%]">
+                <div class="flex-1 border pr-2 pl-5 rounded-lg items-center text-sm max-w-[60%] hidden md:flex ">
                     <input placeholder="Digite aqui o que você procura" type="text" class="w-full outline-none p-2">
                     <i class="fa-solid fa-magnifying-glass text-lg"></i>
                 </div>
@@ -49,7 +51,7 @@
 
 
             <div class="flex items-center gap-5">
-                <div class="flex gap-2 items-center text-[14px]">
+                <div class="hidden gap-2 items-center text-sm md:flex">
                     <i class=" fa-regular fa-user text-[26px] text-[#005CFF]"></i>
                     <p class="leading-[15px]">Olá,<br>Nome do cliente!</p>
                 </div>
@@ -64,36 +66,36 @@
 
 
         </div>
+        <div class="w-full overflow-hidden px-10 lg:px-20 2xl:px-48 hidden md:flex m-3">
 
-        <div class="flex  px-10 lg:px-48 w-full text-[14px] justify-between pb-3">
-            <div class=" flex items-center gap-2">
-                <i class="fa-solid fa-bars"></i>
-                <p class="font-bold">Todas as Categorias</p>
+            <!-- Linha de categorias -->
+            <div class="flex items-center justify-between w-full gap-6">
+
+                <!-- Sempre visível -->
+                <div class="flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                    <i class="fa-solid fa-bars"></i>
+                    <p class="font-bold">Todas as Categorias</p>
+                </div>
+
+                <!-- Departamentos: ajustáveis por breakpoint -->
+                <div class="flex justify-between flex-1">
+                    <p class="text-center w-full hidden md:block">Departamento</p>
+                    <p class="text-center w-full hidden md:block">Departamento</p>
+                    <p class="text-center w-full hidden md:block">Departamento</p>
+                    <p class="text-center w-full hidden md:block">Departamento</p>
+                    <p class="text-center w-full hidden lg:block">Departamento</p>
+                    <p class="text-center w-full hidden lg:block">Departamento</p>
+                    <p class="text-center w-full hidden xl:block">Departamento</p>
+                    <p class="text-center w-full hidden 2xl:block">Departamento</p>
+                </div>
+
             </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
-            <div class="">
-                <p>Departamento</p>
-            </div>
+        </div>
+
+        <div
+            class="flex-1 border pr-2 pl-5 rounded-lg items-center text-sm px-10 lg:px-20 2xl:px-48 w-full flex md:hidden ">
+            <input placeholder="Digite aqui o que você procura" type="text" class="w-full outline-none p-2">
+            <i class="fa-solid fa-magnifying-glass text-lg"></i>
         </div>
 
         <div
@@ -111,7 +113,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="flex flex-col  px-10 md:px-24 lg:px-44 relative">
+        <div class="flex flex-col  px-10 lg:px-20 2xl:px-48 relative">
 
 
             <div class="flex justify-between items-center pt-10">
@@ -141,8 +143,7 @@
 
 
                 <div class="flex justify-center w-full lg:w-1/2">
-                    <img class="w-full max-w-[500px] bg-[#c2c2c2] p-4 " src="/public/img/caneca.png"
-                        alt="Caneca" />
+                    <img class="w-full max-w-[500px] bg-[#c2c2c2] p-4 " src="/public/img/caneca.png" alt="Caneca" />
                 </div>
 
 
@@ -174,15 +175,15 @@
     </section>
 
 
-    <section class="bg-[#dedede] min-h-screen px-10 md:px-24 lg:px-44 py-10">
+    <section class="bg-[#dedede] min-h-screen px-10 lg:px-20 2xl:px-48 py-10">
         <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
 
-
-            <div class="font-['Nunito'] max-w-xl">
+            <!-- Coluna dos tópicos -->
+            <div class="order-2 lg:order-1 font-['Nunito'] max-w-xl">
                 <h1 class="text-3xl font-bold mb-8 text-center lg:text-left text-[#4f4f4f]">Lorem ipsum</h1>
 
                 <div class="space-y-8">
-
+                    <!-- Tópico 1 -->
                     <div class="flex gap-4 items-center">
                         <div
                             class="w-24 h-24 min-w-24 rounded-full bg-[#005cff] flex items-center justify-center shrink-0">
@@ -194,7 +195,7 @@
                         </p>
                     </div>
 
-
+                    <!-- Tópico 2 -->
                     <div class="flex gap-4 items-center">
                         <div
                             class="w-24 h-24 min-w-24 rounded-full bg-[#005cff] flex items-center justify-center shrink-0">
@@ -206,7 +207,7 @@
                         </p>
                     </div>
 
-
+                    <!-- Tópico 3 -->
                     <div class="flex gap-4 items-center">
                         <div
                             class="w-24 h-24 min-w-24 rounded-full bg-[#005cff] flex items-center justify-center shrink-0">
@@ -220,8 +221,8 @@
                 </div>
             </div>
 
-
-            <div class="flex justify-center">
+            <!-- Coluna da imagem -->
+            <div class="order-1 lg:order-2 flex justify-center">
                 <img class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl py-6" src="/public/img/canecaComFundo.png"
                     alt="Imagem decorativa">
             </div>
@@ -230,7 +231,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="flex flex-col px-10 md:px-24 lg:px-44 relative">
+        <div class="flex flex-col px-10 lg:px-20 2xl:px-48 relative">
 
 
 
@@ -260,8 +261,7 @@
                     </p>
                 </div>
                 <div class="flex justify-center w-full lg:w-1/2">
-                    <img class="w-full max-w-[500px] bg-[#c2c2c2] p-4 " src="/public/img/caneca.png"
-                        alt="Caneca" />
+                    <img class="w-full max-w-[500px] bg-[#c2c2c2] p-4 " src="/public/img/caneca.png" alt="Caneca" />
                 </div>
 
 
@@ -292,12 +292,11 @@
     </section>
 
     <section>
-        <div
-            class="w-screen  bg-[#E7E7EA] overflow-hidden flex items-center relative font-['Nunito']">
-            <img class=" h-[460px] w-full object-cover blur-sm"
-                src="/public/img/avanti-home.png" alt="Imagem Centralizada"
-            >
-            <div class=" h-24 w-full absolute bg-[#005CFF] flex items-center justify-center text-white text-lg">
+        <div class="w-screen  bg-[#E7E7EA] overflow-hidden flex items-center relative font-['Nunito']">
+            <img class=" h-[460px] w-full object-cover blur-sm" src="/public/img/avanti-home.png"
+                alt="Imagem Centralizada">
+            <div
+                class=" h-24 w-full absolute bg-[#005CFF] flex items-center justify-center text-white text-lg text-center p-2">
                 <p>Entre em contato conosco e verifique a disponibilidade para sua região!</p>
             </div>
         </div>
@@ -305,71 +304,81 @@
     </section>
 
     <section class="bg-white mt-12 mb-7">
-        <div class="flex items-center flex-col px-10 md:px-24 lg:px-44 relative gap-5  font-['Nunito']">
+        <div class="flex items-center flex-col px-10 lg:px-20 2xl:px-48 relative gap-5  font-['Nunito']">
             <p class="font-bold">Cadastre-se na nossa <span class="text-[#005CFF]">newsletter</span></p>
-            <div class="bg-[#DEDEDE] p-9 w-full rounded-md flex justify-center items-center gap-5">
-                <input 
-                class="bg-white px-6 py-3 rounded-md text-sm "
-                type="text"
-                placeholder="Digite seu nome"
-                >
-                <input 
-                class="bg-white px-6 py-3 rounded-md text-sm"
-                type="email"
-                placeholder="Digite seu e-mail"
-                >
+            <div
+                class="bg-[#DEDEDE] p-9 w-full rounded-md flex flex-col md:flex-row  justify-center items-center gap-5">
+                <input class="bg-white px-6 py-3 w-full md:max-w-[270px] rounded-md text-sm " type="text"
+                    placeholder="Digite seu nome">
+                <input class="bg-white px-6 py-3 w-full md:max-w-[270px] rounded-md text-sm" type="email"
+                    placeholder="Digite seu e-mail">
                 <div class="flex items-center gap-2">
-                    <input 
-                    class="bg-white px-6 py-3 rounded-md text-sm"
-                    type="checkbox"
-                    placeholder="Digite seu e-mail"
-                    >
-                    <p class="text-sm text-[#656565]">Estou de acordo com a Política de Privacidade</p>
+                    <input class="bg-white px-6 py-3 rounded-md text-sm" type="checkbox"
+                        placeholder="Digite seu e-mail">
+                    <p class="text-sm text-[#656565]">Estou de acordo com a <u>Política de Privacidade</u></p>
 
                 </div>
-                <button class="px-5 py-2 bg-[#005CFF] text-white rounded-lg">Cadastrar</button>
+                <button class="px-5 py-2 w-full  md:max-w-[120px] bg-[#005CFF] text-white rounded-lg">Cadastrar</button>
             </div>
         </div>
     </section>
 
     <section class="">
-        <div class="bg-[#F5F5F5] flex flex-col px-10 md:px-24 lg:px-48 pt-16">
-            <div class="flex justify-between">
-                <div class="flex flex-col">
+        <div class="bg-[#F5F5F5] flex flex-col md:px-10 lg:px-20 2xl:px-48 pt-16">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="flex flex-col items-center justify-center mb-5">
                     <img class="w-39 h-7" src="/public/img/attachment.png" alt="Logo avanti">
-                    <div class="flex justify-between mt-10 text-[#005CFF]">
+                    <div class="flex justify-between mt-10 gap-10 text-[#005CFF]">
                         <i class="bi bi-instagram scale-[1.3]"></i>
                         <i class="bi bi-facebook scale-[1.3]"></i>
                         <i class="bi bi-youtube scale-[1.3]"></i>
                         <i class="bi bi-tiktok scale-[1.3]"></i>
                     </div>
                 </div>
-                <div class="flex flex-col text-sm gap-2">
-                    <h4 class="font-bold">Institucional</h4>
-                    <h5>Sobre Nós</h5>
-                    <h5>Nossas Lojas</h5>
-                    <h5>Privacidade e Segurança</h5>
-                    <h5>Termos e Condições</h5>
+                <div class="flex flex-col text-sm gap-2 w-full md:w-auto py-3 px-8  md:p-0 border md:border-none">
+                    <div class="flex md:block justify-between">
+                        <h4 class="font-bold">Institucional</h4>
+                        <i class="bi bi-caret-down text-[#005CFF] md:hidden"></i>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-2">
+                        <h5>Sobre Nós</h5>
+                        <h5>Nossas Lojas</h5>
+                        <h5>Privacidade e Segurança</h5>
+                        <h5>Termos e Condições</h5>
+                    </div> 
                 </div>
-                <div class="flex flex-col text-sm gap-2">
-                    <h4 class="font-bold">Central de ajuda</h4>
-                    <h5>Fale Conosco</h5>
-                    <h5>Frete e Entrega</h5>
-                    <h5>Trocas e Devoluçõe</h5>
-                    <h5>Formas de Pagamento</h5>
-                    <h5>FAQ</h5>
+                <!-- Bloco: Central de ajuda -->
+                <div class="flex flex-col text-sm gap-2 w-full md:w-auto py-3 px-8 md:p-0 border md:border-none">
+                    <div class="flex md:block justify-between">
+                        <h4 class="font-bold">Central de ajuda</h4>
+                        <i class="bi bi-caret-down text-[#005CFF] md:hidden"></i>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-2">
+                        <h5>Fale Conosco</h5>
+                        <h5>Frete e Entrega</h5>
+                        <h5>Trocas e Devoluções</h5>
+                        <h5>Formas de Pagamento</h5>
+                        <h5>FAQ</h5>
+                    </div>
                 </div>
-                <div class="flex flex-col text-sm gap-2">
-                    <h4 class="font-bold">Atendimento</h4>
-                    <h5><span class="font-medium">Telefone:</span> (00) 1234-5678</h5>
-                    <h5><span class="font-medium">E-mail:</span>exemplo@exemplo.com.b</h5>
-                    <h5 class="font-medium">Horário de atendimento:</h5>
-                    <h5>Segunda a Sábado: 07h00 às 23h00</h5>
-                    <h5>Domingos e Feriados:  07h00 às 21h00</h5>
+                
+                <!-- Bloco: Atendimento -->
+                <div class="flex flex-col text-sm gap-2 w-full md:w-auto py-3 px-8 md:p-0 border md:border-none">
+                    <div class="flex md:block justify-between">
+                        <h4 class="font-bold">Atendimento</h4>
+                        <i class="bi bi-caret-down text-[#005CFF] md:hidden"></i>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-2">
+                        <h5><span class="font-medium">Telefone:</span> (00) 1234-5678</h5>
+                        <h5><span class="font-medium">E-mail:</span> exemplo@exemplo.com.br</h5>
+                        <h5 class="font-medium">Horário de atendimento:</h5>
+                        <h5>Segunda a Sábado: 07h00 às 23h00</h5>
+                        <h5>Domingos e Feriados: 07h00 às 21h00</h5>
+                    </div>
                 </div>
 
             </div>
-            <div class="flex items-center justify-center my-14 gap-5">
+            <div class="flex flex-wrap items-center justify-center my-14 gap-5">
                 <img src="/public/img/innovation class/União 34.png" alt="">
                 <img src="/public/img/innovation class/União 32.png" alt="">
                 <img src="/public/img/innovation class/visa.png" alt="">
@@ -379,11 +388,15 @@
                 <img src="/public/img/innovation class/paypal-seeklogo.com.png" alt="">
                 <img src="/public/img/innovation class/b-1.png" alt="">
                 <img src="/public/img/innovation class/icon-boleto___ffe2ba684569d29f8e546b10457c48f8.png" alt="">
-
             </div>
         </div>
-        <div class="flex flex-col bg-white px-10 md:px-24 lg:px-48 pt-16 justify-center items-center">
-            <p class="text-center text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        <div class="flex flex-col bg-white px-10 lg:px-20 2xl:px-48 pt-16 justify-center items-center">
+            <p class="text-center text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+                vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+                feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                zzril delenit augue duis dolore te feugait nulla facilisi.</p>
             <div class="flex my-8 gap-5 items-center">
                 <img class="w-10 h-8" src="/public/img/innovation class/lock.png" alt="">
                 <img class="w-14 h-8" src="/public/img/innovation class/vtex-pci-200.png" alt="">
