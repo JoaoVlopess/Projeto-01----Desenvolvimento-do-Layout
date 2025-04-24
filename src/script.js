@@ -81,3 +81,90 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.querySelectorAll('[data-toggle]').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const key = toggle.getAttribute('data-toggle');
+        const content = document.querySelector(`[data-content="${key}"]`);
+        const iconDown = document.querySelector(`[data-icon="${key}-down"]`);
+        const iconUp = document.querySelector(`[data-icon="${key}-up"]`);
+
+        if (content && iconDown && iconUp) {
+            content.classList.toggle('hidden');
+            content.classList.toggle('flex');
+
+            iconDown.classList.toggle('hidden');
+            iconUp.classList.toggle('hidden');
+        }
+    });
+});
+
+const categoriasTrigger = document.getElementById('categoriasTrigger');
+  const departamentoTriggers = document.querySelectorAll('.departamento-trigger');
+  const submenuCategorias = document.getElementById('menuCategorias'); // supondo que você tenha esse
+  const submenuDepartamento = document.getElementById('submenuDepartamento');
+
+  let hideTimeout;
+  let activeTrigger = null;
+
+  const showDropdown = (submenu, trigger) => {
+    clearTimeout(hideTimeout);
+
+    submenuCategorias?.classList.add('hidden');
+    submenuDepartamento?.classList.add('hidden');
+    submenu.classList.remove('hidden');
+
+    if (activeTrigger) activeTrigger.classList.remove('text-[#005CFF]');
+    trigger.classList.add('text-[#005CFF]');
+    activeTrigger = trigger;
+  };
+
+  const hideDropdown = () => {
+    hideTimeout = setTimeout(() => {
+      submenuCategorias?.classList.add('hidden');
+      submenuDepartamento?.classList.add('hidden');
+      if (activeTrigger) activeTrigger.classList.remove('text-[#005CFF]');
+      activeTrigger = null;
+    }, 200);
+  };
+
+  // Trigger de "Todas as Categorias"
+  categoriasTrigger.addEventListener('mouseenter', () => showDropdown(submenuCategorias, categoriasTrigger));
+  categoriasTrigger.addEventListener('mouseleave', hideDropdown);
+  submenuCategorias?.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+  submenuCategorias?.addEventListener('mouseleave', hideDropdown);
+
+  // Triggers de departamentos
+  departamentoTriggers.forEach(trigger => {
+    trigger.addEventListener('mouseenter', () => showDropdown(submenuDepartamento, trigger));
+    trigger.addEventListener('mouseleave', hideDropdown);
+  });
+
+  submenuDepartamento.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+  submenuDepartamento.addEventListener('mouseleave', hideDropdown);
+
+
+  const departamentos = document.querySelectorAll('#menuCategorias .flex > .flex.justify-between');
+  const dropdown = document.getElementById('menuCategorias');
+
+  // Marca item selecionado ao clicar
+  departamentos.forEach(departamento => {
+    departamento.addEventListener('click', () => {
+      departamentos.forEach(dep => dep.classList.remove('text-[#005CFF]'));
+      departamento.classList.add('text-[#005CFF]');
+    });
+  });
+
+  // Observa mudanças na classe do dropdown
+  const observer = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        if (dropdown.classList.contains('hidden')) {
+          // Remove seleção quando dropdown for escondido
+          departamentos.forEach(dep => dep.classList.remove('text-[#005CFF]'));
+        }
+      }
+    }
+  });
+
+  observer.observe(dropdown, { attributes: true });
