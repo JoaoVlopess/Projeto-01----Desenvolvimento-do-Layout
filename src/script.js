@@ -82,6 +82,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const searchButton = document.getElementById('searchButton');
+const searchInput = document.getElementById('searchInput');
+const searchResult = document.getElementById('searchResult');
+
+searchButton.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    if (query) {
+        searchResult.textContent = `Você buscou por: '${query}'`;
+    } else {
+        searchResult.textContent = ''; // limpa se o campo estiver vazio
+    }
+});
+
 document.querySelectorAll('[data-toggle]').forEach(toggle => {
     toggle.addEventListener('click', () => {
         const key = toggle.getAttribute('data-toggle');
@@ -100,71 +113,73 @@ document.querySelectorAll('[data-toggle]').forEach(toggle => {
 });
 
 const categoriasTrigger = document.getElementById('categoriasTrigger');
-  const departamentoTriggers = document.querySelectorAll('.departamento-trigger');
-  const submenuCategorias = document.getElementById('menuCategorias'); // supondo que você tenha esse
-  const submenuDepartamento = document.getElementById('submenuDepartamento');
+const categoriasIcon = document.getElementById('categoriasIcon'); // novo ícone
+const departamentoTriggers = document.querySelectorAll('.departamento-trigger');
+const submenuCategorias = document.getElementById('menuCategorias');
+const submenuDepartamento = document.getElementById('submenuDepartamento');
 
-  let hideTimeout;
-  let activeTrigger = null;
+let hideTimeout;
+let activeTrigger = null;
 
-  const showDropdown = (submenu, trigger) => {
-    clearTimeout(hideTimeout);
+const showDropdown = (submenu, trigger) => {
+  clearTimeout(hideTimeout);
 
+  submenuCategorias?.classList.add('hidden');
+  submenuDepartamento?.classList.add('hidden');
+  submenu.classList.remove('hidden');
+
+  if (activeTrigger) activeTrigger.classList.remove('text-[#005CFF]');
+  trigger.classList.add('text-[#005CFF]');
+  activeTrigger = trigger;
+};
+
+const hideDropdown = () => {
+  hideTimeout = setTimeout(() => {
     submenuCategorias?.classList.add('hidden');
     submenuDepartamento?.classList.add('hidden');
-    submenu.classList.remove('hidden');
-
     if (activeTrigger) activeTrigger.classList.remove('text-[#005CFF]');
-    trigger.classList.add('text-[#005CFF]');
-    activeTrigger = trigger;
-  };
+    activeTrigger = null;
+  }, 200);
+};
 
-  const hideDropdown = () => {
-    hideTimeout = setTimeout(() => {
-      submenuCategorias?.classList.add('hidden');
-      submenuDepartamento?.classList.add('hidden');
-      if (activeTrigger) activeTrigger.classList.remove('text-[#005CFF]');
-      activeTrigger = null;
-    }, 200);
-  };
+// Gatilhos de "Todas as Categorias" e ícone
+[categoriasTrigger, categoriasIcon].forEach(trigger => {
+  trigger.addEventListener('mouseenter', () => showDropdown(submenuCategorias, categoriasTrigger));
+  trigger.addEventListener('mouseleave', hideDropdown);
+});
 
-  // Trigger de "Todas as Categorias"
-  categoriasTrigger.addEventListener('mouseenter', () => showDropdown(submenuCategorias, categoriasTrigger));
-  categoriasTrigger.addEventListener('mouseleave', hideDropdown);
-  submenuCategorias?.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
-  submenuCategorias?.addEventListener('mouseleave', hideDropdown);
+submenuCategorias?.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+submenuCategorias?.addEventListener('mouseleave', hideDropdown);
 
-  // Triggers de departamentos
-  departamentoTriggers.forEach(trigger => {
-    trigger.addEventListener('mouseenter', () => showDropdown(submenuDepartamento, trigger));
-    trigger.addEventListener('mouseleave', hideDropdown);
+// Triggers de departamentos
+departamentoTriggers.forEach(trigger => {
+  trigger.addEventListener('mouseenter', () => showDropdown(submenuDepartamento, trigger));
+  trigger.addEventListener('mouseleave', hideDropdown);
+});
+
+submenuDepartamento.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+submenuDepartamento.addEventListener('mouseleave', hideDropdown);
+
+// Marca item selecionado ao clicar
+const departamentos = document.querySelectorAll('#menuCategorias .flex > .flex.justify-between');
+const dropdown = document.getElementById('menuCategorias');
+
+departamentos.forEach(departamento => {
+  departamento.addEventListener('click', () => {
+    departamentos.forEach(dep => dep.classList.remove('text-[#005CFF]'));
+    departamento.classList.add('text-[#005CFF]');
   });
+});
 
-  submenuDepartamento.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
-  submenuDepartamento.addEventListener('mouseleave', hideDropdown);
-
-
-  const departamentos = document.querySelectorAll('#menuCategorias .flex > .flex.justify-between');
-  const dropdown = document.getElementById('menuCategorias');
-
-  // Marca item selecionado ao clicar
-  departamentos.forEach(departamento => {
-    departamento.addEventListener('click', () => {
-      departamentos.forEach(dep => dep.classList.remove('text-[#005CFF]'));
-      departamento.classList.add('text-[#005CFF]');
-    });
-  });
-
-  // Observa mudanças na classe do dropdown
-  const observer = new MutationObserver((mutationsList) => {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        if (dropdown.classList.contains('hidden')) {
-          // Remove seleção quando dropdown for escondido
-          departamentos.forEach(dep => dep.classList.remove('text-[#005CFF]'));
-        }
+// Observa mudanças na classe do dropdown
+const observer = new MutationObserver((mutationsList) => {
+  for (const mutation of mutationsList) {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+      if (dropdown.classList.contains('hidden')) {
+        departamentos.forEach(dep => dep.classList.remove('text-[#005CFF]'));
       }
     }
-  });
+  }
+});
 
-  observer.observe(dropdown, { attributes: true });
+observer.observe(dropdown, { attributes: true });

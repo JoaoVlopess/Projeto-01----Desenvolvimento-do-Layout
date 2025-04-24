@@ -36,17 +36,22 @@
 
         <div class="flex px-10 lg:px-20 2xl:px-48 py-5 gap-8 lg:gap-32 items-center justify-between ">
 
-            <i class="bi bi-list scale-[2] md:hidden"></i>
+            <i class="bi bi-list scale-[2] md:hidden cursor-pointer" id="categoriasIcon"></i>
 
             <div class="flex md:flex-1 md:gap-14 items-center">
                 <div>
                     <img class="w-39 h-7" src="/public/img/attachment.png" alt="Logo avanti">
                 </div>
 
-                <div class="flex-1 border pr-2 pl-5 rounded-lg items-center text-sm max-w-[60%] hidden md:flex ">
-                    <input placeholder="Digite aqui o que você procura" type="text" class="w-full outline-none p-2">
-                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                <div class="hidden md:flex flex-col max-w-[60%] flex-1">
+                    <div class="flex border pr-2 pl-5 rounded-lg items-center text-sm">
+                        <input id="searchInput" placeholder="Digite aqui o que você procura" type="text"
+                            class="w-full outline-none p-2">
+                        <i id="searchButton" class="fa-solid fa-magnifying-glass text-lg cursor-pointer"></i>
+                    </div>
+                    <p id="searchResult" class="mt-2 text-sm text-gray-700 text-center"></p>
                 </div>
+
             </div>
 
 
@@ -74,7 +79,8 @@
                 <!-- Sempre visível -->
                 <div class="flex items-center gap-2 whitespace-nowrap flex-shrink-0 ">
                     <i class="fa-solid fa-bars"></i>
-                    <p class="font-bold  cursor-default hover:text-[#005CFF]" id="categoriasTrigger">Todas as Categorias</p>
+                    <p class="font-bold  cursor-default hover:text-[#005CFF] " id="categoriasTrigger">Todas as
+                        Categorias</p>
                 </div>
 
                 <!-- Departamentos: ajustáveis por breakpoint -->
@@ -101,10 +107,12 @@
         <div
             class="w-screen h-[500px] bg-[#E7E7EA] flex items-center justify-center overflow-hidden font-['Nunito'] relative px-3 ">
 
-            <div id="menuCategorias" class=" absolute hidden w-full top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default">
+            <div id="menuCategorias"
+                class=" absolute hidden w-full top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default">
                 <div class="border border-t-0  bg-white flex ">
 
-                    <div class="flex flex-col p-5 bg-gray-100 gap-5 overflow-y-auto max-h-[450px] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-300 scrollbar-custom">
+                    <div
+                        class="flex flex-col p-5 bg-gray-100 gap-5 overflow-y-auto max-h-[450px] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-300 scrollbar-custom">
                         <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
                             <p class="">Departamento</p>
                             <i class="bi bi-caret-right "></i>
@@ -158,8 +166,8 @@
                             <i class="bi bi-caret-right "></i>
                         </div>
 
-                        
-                       
+
+
 
                     </div>
 
@@ -173,7 +181,7 @@
                             <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
                             <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
                             <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                           
+
                         </div>
                         <div class="flex flex-col gap-5 flex-1">
                             <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
@@ -225,8 +233,9 @@
 
                 </div>
             </div>
-            
-            <div class="submenu-departamento absolute hidden w-full  top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default" id="submenuDepartamento">
+
+            <div class="submenu-departamento absolute hidden w-full  top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default"
+                id="submenuDepartamento">
                 <div class="border border-t-0  bg-white flex ">
                     <div class="flex flex-col flex-1 px-4 py-5">
                         <div class="">
@@ -264,7 +273,7 @@
                                 <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
                             </div>
                         </div>
-                        
+
 
                     </div>
 
