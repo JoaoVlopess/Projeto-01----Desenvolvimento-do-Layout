@@ -21,149 +21,164 @@
 
 </head>
 
-<body class="overflow-x-hidden pt-[165px]">
+<body class="overflow-x-hidden pt-[138px]">
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-  <!-- Faixa promocional -->
-  <div class="w-screen p-3 py-1.5 px-3 bg-[#005CFF] text-white flex justify-center items-center font-['Nunito_Sans'] text-sm font-bold text-center">
-    <p class="m-0">
-      Ganhe <span class="bg-[#6220C1] px-1.5 rounded-md font-normal">R$10,00</span> de desconto no seu
-      primeiro pedido. Utilize o cupom <i class="font-light">DESCONTO10</i>
-    </p>
-  </div>
-
-  <!-- Barra principal -->
-  <div class="flex px-10 lg:px-20 2xl:px-48 py-5 gap-8 lg:gap-32 items-center justify-between">
-    <i class="bi bi-list scale-[2] md:hidden cursor-pointer" id="categoriasIcon"></i>
-
-    <div class="flex md:flex-1 md:gap-14 items-center">
-      <div>
-        <img class="w-39 h-7" src="/public/img/attachment.png" alt="Logo avanti">
-      </div>
-
-      <!-- Busca desktop -->
-      <div class="hidden md:flex flex-col max-w-[60%] flex-1">
-        <div class="flex border pr-2 pl-5 rounded-lg items-center text-sm">
-          <input id="searchInput" placeholder="Digite aqui o que você procura" type="text" class="w-full outline-none p-2">
-          <i id="searchButton" class="fa-solid fa-magnifying-glass text-lg cursor-pointer"></i>
+        <!-- Faixa promocional -->
+        <div
+            class="w-screen p-3 py-1.5 px-3 bg-[#005CFF] text-white flex justify-center items-center font-['Nunito_Sans'] text-sm font-bold text-center">
+            <p class="m-0">
+                Ganhe <span class="bg-[#6220C1] px-1.5 rounded-md font-normal">R$10,00</span> de desconto no seu
+                primeiro pedido. Utilize o cupom <i class="font-light">DESCONTO10</i>
+            </p>
         </div>
-        <p id="searchResult" class="mt-2 text-sm text-gray-700 text-center"></p>
-      </div>
-    </div>
 
-    <div class="flex items-center gap-5">
-      <div class="hidden gap-2 items-center text-sm md:flex">
-        <i class="fa-regular fa-user text-[26px] text-[#005CFF]"></i>
-        <p class="leading-[15px]">Olá,<br>Nome do cliente!</p>
-      </div>
+        <!-- Barra principal -->
+        <div class="flex px-10 lg:px-20 2xl:px-48 py-3 gap-8 lg:gap-32 items-center justify-between">
+            <i class="bi bi-list scale-[2] md:hidden cursor-pointer" id="categoriasIcon"></i>
 
-      <div class="relative inline-block">
-        <i class="bi bi-cart2 text-2xl"></i>
-        <div class="flex items-center justify-center text-sm text-white absolute -top-1 -right-2 h-5 w-5 rounded-full bg-[#005CFF]">2</div>
-      </div>
-    </div>
-  </div>
+            <div class="flex md:flex-1 md:gap-14 items-center">
+                <div>
+                    <img class="w-39 h-7" src="/public/img/attachment.png" alt="Logo avanti">
+                </div>
 
-  <!-- Categorias e Departamentos (desktop) -->
-  <div class="w-full overflow-hidden px-10 lg:px-20 2xl:px-48 hidden md:flex flex-col m-3 text-sm">
-    <div class="flex items-center justify-between w-full gap-6">
-      <div class="flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-        <i class="fa-solid fa-bars"></i>
-        <p class="font-bold cursor-default hover:text-[#005CFF]" id="categoriasTrigger">Todas as Categorias</p>
-      </div>
+                <!-- Busca desktop -->
+                <div class="hidden md:flex flex-col max-w-[60%] flex-1">
+                    <div class="flex border pr-2 pl-5 rounded-lg items-center text-sm">
+                      <input placeholder="Digite aqui o que você procura" type="text"
+                        class="searchInput w-full outline-none p-2">
+                      <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer searchButton"></i>
+                    </div>
+                    <p class="searchResult mt-2 text-sm text-gray-700 text-center"></p>
+                  </div>
+            </div>
 
-      <div class="flex justify-between flex-1">
-        <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden lg:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden lg:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden xl:block departamento-trigger cursor-default">Departamento</p>
-        <p class="text-center w-full hidden 2xl:block departamento-trigger cursor-default">Departamento</p>
-      </div>
-    </div>
-  </div>
+            <div class="flex items-center gap-5">
+                <div class="hidden gap-2 items-center text-sm md:flex">
+                    <i class="fa-regular fa-user text-[26px] text-[#005CFF]"></i>
+                    <p class="leading-[15px]">Olá,<br>Nome do cliente!</p>
+                </div>
 
-  <!-- Busca mobile -->
-  <div class="flex flex-col md:hidden w-full px-5 lg:px-20 2xl:px-48 mb-3">
-    <div class="flex border px-4 rounded-lg items-center text-sm">
-      <input placeholder="Digite aqui oque você procura" type="text" class="searchInput w-full outline-none p-2">
-      <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer searchButton"></i>
-    </div>
-    <p class="searchResult mt-2 text-sm text-gray-700 text-center"></p>
-  </div>
-
-  <!-- Menu de Categorias (flutuante) -->
-  <div id="menuCategorias" class="absolute hidden w-full  z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default">
-    <div class="border border-t-0 bg-white flex">
-      <div id="listaDepartamentos" class="flex flex-col p-5 bg-gray-100 gap-5 overflow-y-auto max-h-[450px] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-300 scrollbar-custom">
-      </div>
-      <div id="colunasCategorias" class="flex flex-1 px-10 py-5 gap-5"></div>
-
-      <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96">
-        <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa" class="w-full h-full object-cover">
-        <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
-        <div class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
-          <p class="text-3xl font-medium leading-tight">
-            Confira os<br>
-            <span class="font-bold">Produtos</span><br>
-            <span class="font-bold">Que</span><br>
-            <span class="font-bold">acabaram</span><br>
-            <span class="font-bold">De chegar</span>
-          </p>
-          <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
-            VER TODOS
-          </button>
+                <div class="relative inline-block">
+                    <i class="bi bi-cart2 text-2xl"></i>
+                    <div
+                        class="flex items-center justify-center text-sm text-white absolute -top-1 -right-2 h-5 w-5 rounded-full bg-[#005CFF]">
+                        2</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Submenu de Departamento -->
-  <div class="submenu-departamento absolute hidden w-full z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default" id="submenuDepartamento">
-    <div class="border border-t-0 bg-white flex">
-      <div class="flex flex-col flex-1 px-4 py-5">
-        <div>
-          <p class="text-base mb-4"><strong>Departamento</strong></p>
+        <!-- Categorias e Departamentos (desktop) -->
+        <div class="w-full overflow-hidden px-10 lg:px-20 2xl:px-48 hidden md:flex flex-col m-2 text-sm">
+            <div class="flex items-center justify-between w-full gap-6">
+                <div class="flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                    <i class="fa-solid fa-bars"></i>
+                    <p class="font-bold cursor-default hover:text-[#005CFF]" id="categoriasTrigger">Todas as Categorias
+                    </p>
+                </div>
+
+                <div class="flex justify-between flex-1">
+                    <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden md:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden lg:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden lg:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden xl:block departamento-trigger cursor-default">Departamento</p>
+                    <p class="text-center w-full hidden 2xl:block departamento-trigger cursor-default">Departamento</p>
+                </div>
+            </div>
         </div>
-        <div id="submenuColunasCategorias" class="flex gap-32"></div>
-      </div>
 
-      <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96">
-        <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa" class="w-full h-full object-cover">
-        <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
-        <div class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
-          <p class="text-3xl font-medium leading-tight">
-            Confira os<br>
-            <span class="font-bold">Produtos</span><br>
-            <span class="font-bold">Que</span><br>
-            <span class="font-bold">acabaram</span><br>
-            <span class="font-bold">De chegar</span>
-          </p>
-          <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
-            VER TODOS
-          </button>
+        <!-- Busca mobile -->
+        <div class="flex flex-col md:hidden w-full px-5 lg:px-20 2xl:px-48 mb-3">
+            <div class="flex border px-4 rounded-lg items-center text-sm">
+                <input placeholder="Digite aqui oque você procura" type="text"
+                    class="searchInput w-full outline-none p-2">
+                <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer searchButton"></i>
+            </div>
+            <p class="searchResult mt-2 text-sm text-gray-700 text-center"></p>
         </div>
-      </div>
+
+        <!-- Menu de Categorias (flutuante) -->
+        <div id="menuCategorias" class="absolute hidden w-full  z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default">
+            <div class="border border-t-0 bg-white flex">
+                <div id="listaDepartamentos"
+                    class="flex flex-col p-5 bg-gray-100 gap-5 overflow-y-auto max-h-[450px] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-300 scrollbar-custom">
+                </div>
+                <div id="colunasCategorias" class="flex flex-1 px-10 py-5 gap-5"></div>
+
+                <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96">
+                    <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
+                        <p class="text-3xl font-medium leading-tight">
+                            Confira os<br>
+                            <span class="font-bold">Produtos</span><br>
+                            <span class="font-bold">Que</span><br>
+                            <span class="font-bold">acabaram</span><br>
+                            <span class="font-bold">De chegar</span>
+                        </p>
+                        <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
+                            VER TODOS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submenu de Departamento -->
+        <div class="submenu-departamento absolute hidden w-full z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default"
+            id="submenuDepartamento">
+            <div class="border border-t-0 bg-white flex">
+                <div class="flex flex-col flex-1 px-4 py-5">
+                    <div>
+                        <p class="text-base mb-4"><strong>Departamento</strong></p>
+                    </div>
+                    <div id="submenuColunasCategorias" class="flex gap-32"></div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96">
+                    <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
+                        <p class="text-3xl font-medium leading-tight">
+                            Confira os<br>
+                            <span class="font-bold">Produtos</span><br>
+                            <span class="font-bold">Que</span><br>
+                            <span class="font-bold">acabaram</span><br>
+                            <span class="font-bold">De chegar</span>
+                        </p>
+                        <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
+                            VER TODOS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- banner -->
+    <section
+    class="w-screen h-[500px] bg-[#E7E7EA] flex items-center justify-center overflow-hidden font-['Nunito'] relative px-3">
+
+    <!-- Imagem principal e texto promocional -->
+    <img class="scale-[1.6] md:scale-[2] h-full object-cover -translate-y-32 ml-[-285px] sm:ml-[-200px] md:ml-[-20px] lg:ml-44"
+        src="/public/img/cadeira-removebg-preview.png" alt="Imagem Centralizada">
+
+    <div class="flex flex-col items-center ml-24 sm:ml-36 md:ml-28 lg:ml-32 text-center ml-10">
+        <p class="uppercase font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-4">
+            Super<span class="uppercase font-light text-4xl sm:text-5xl md:text-7xl lg:text-8xl">SALE</span>
+        </p>
+        <p class="uppercase font-medium text-[#005CFF] text-lg sm:text-xl md:text-2xl lg:text-3xl mb-5">
+            Itens selecionados com até
+        </p>
+        <p class="uppercase font-bold text-[#005CFF] text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            50%off
+        </p>
     </div>
-  </div>
-</header>
-
-<!-- CONTEÚDO PRINCIPAL / HERO SECTION -->
-<section class=" w-screen h-[500px] bg-[#E7E7EA] flex items-center justify-center overflow-hidden font-['Nunito'] relative px-3">
-
-  
-
-  <!-- Imagem principal e texto promocional -->
-  <img class="scale-[2] h-full object-cover -translate-y-32 ml-44" src="/public/img/cadeira-removebg-preview.png" alt="Imagem Centralizada">
-
-  <div class="flex flex-col items-center ml-44">
-    <p class="uppercase font-bold text-8xl mb-4">Super<span class="uppercase font-light text-8xl ">SALE</span></p>
-    <p class="uppercase font-medium text-[#005CFF] text-3xl mb-5">Itens selecionados com até</p>
-    <p class="uppercase font-bold text-5xl text-[#005CFF]">50%off</p>
-  </div>
 </section>
-
 
     <section class="bg-white">
         <div class="flex flex-col  px-10 lg:px-20 2xl:px-48 relative">
