@@ -98,212 +98,74 @@
             </div>
         </div>
 
-        <div
-            class="flex-1 border pr-2 pl-5 rounded-lg items-center text-sm mx-3 lg:px-20 2xl:px-48 md:w-full flex md:hidden mb-3  ">
-            <input placeholder="Digite aqui o que você procura" type="text" class="w-full outline-none p-2">
-            <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer"></i>
-        </div>
+        <div class="flex flex-col md:hidden w-full px-5 lg:px-20 2xl:px-48 mb-3">
+            <div class="flex border px-4 rounded-lg items-center text-sm ">
+                <input placeholder="Digite aqui oque você procura" type="text" class="searchInput w-full outline-none p-2">
+                <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer searchButton"></i>
+            </div>
+            <p class="searchResult mt-2 text-sm text-gray-700 text-center"></p>
+        </div>   
 
         <div
             class="w-screen h-[500px] bg-[#E7E7EA] flex items-center justify-center overflow-hidden font-['Nunito'] relative px-3 ">
 
             <div id="menuCategorias"
-                class=" absolute hidden w-full top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default">
-                <div class="border border-t-0  bg-white flex ">
+     class="absolute hidden w-full top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default">
+    <div class="border border-t-0 bg-white flex">
+        <div id="listaDepartamentos"
+             class="flex flex-col p-5 bg-gray-100 gap-5 overflow-y-auto max-h-[450px] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-300 scrollbar-custom">
+        </div>
+        <div id="colunasCategorias" class="flex flex-1 px-10 py-5 gap-5"></div>
 
-                    <div
-                        class="flex flex-col p-5 bg-gray-100 gap-5 overflow-y-auto max-h-[450px] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-300 scrollbar-custom">
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-                        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
-                            <p class="">Departamento</p>
-                            <i class="bi bi-caret-right "></i>
-                        </div>
-
-
-
-
-                    </div>
-
-                    <div class="flex flex-1 px-10 py-5">
-                        <div class="flex flex-col gap-5 flex-1">
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-
-                        </div>
-                        <div class="flex flex-col gap-5 flex-1">
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                        </div>
-                        <div class="flex flex-col gap-5 flex-1">
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                        </div>
-
-                    </div>
-
-                    <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96 ">
-                        <!-- Imagem de fundo -->
-                        <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa"
-                            class="w-full h-full object-cover">
-
-                        <!-- Overlay escuro para contraste -->
-                        <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
-
-                        <!-- Texto e botão centralizados -->
-                        <div
-                            class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
-                            <p class="text-3xl font-medium leading-tight">
-                                Confira os<br>
-                                <span class="font-bold">Produtos</span><br>
-                                <span class="font-bold">Que</span><br>
-                                <span class="font-bold">acabaram</span><br>
-                                <span class="font-bold">De chegar</span>
-                            </p>
-
-                            <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
-                                VER TODOS
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96">
+            <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
+                <p class="text-3xl font-medium leading-tight">
+                    Confira os<br>
+                    <span class="font-bold">Produtos</span><br>
+                    <span class="font-bold">Que</span><br>
+                    <span class="font-bold">acabaram</span><br>
+                    <span class="font-bold">De chegar</span>
+                </p>
+                <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
+                    VER TODOS
+                </button>
             </div>
+        </div>
+    </div>
+</div>
 
-            <div class="submenu-departamento absolute hidden w-full  top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default"
-                id="submenuDepartamento">
-                <div class="border border-t-0  bg-white flex ">
-                    <div class="flex flex-col flex-1 px-4 py-5">
-                        <div class="">
-                            <p class="text-base mb-4 "><strong>Departamento</strong></p>
-                        </div>
-                        <div class="flex gap-32">
-                            <div class="flex flex-col gap-5 ">
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            </div>
-                            <div class="flex flex-col gap-5 ">
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            </div>
-                            <div class="flex flex-col gap-5 ">
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                                <p class="hover:text-[#005CFF] cursor-pointer">categoria</p>
-                            </div>
-                        </div>
+<div class="submenu-departamento absolute hidden w-full top-0 z-50 px-10 lg:px-20 2xl:px-48 text-sm cursor-default"
+id="submenuDepartamento">
+<div class="border border-t-0 bg-white flex">
+   <div class="flex flex-col flex-1 px-4 py-5">
+       <div>
+           <p class="text-base mb-4"><strong>Departamento</strong></p>
+       </div>
+       <div id="submenuColunasCategorias" class="flex gap-32"></div>
+   </div>
 
-
-                    </div>
-
-                    <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96 ">
-                        <!-- Imagem de fundo -->
-                        <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa"
-                            class="w-full h-full object-cover">
-
-                        <!-- Overlay escuro para contraste -->
-                        <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
-
-                        <!-- Texto e botão centralizados -->
-                        <div
-                            class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
-                            <p class="text-3xl font-medium leading-tight">
-                                Confira os<br>
-                                <span class="font-bold">Produtos</span><br>
-                                <span class="font-bold">Que</span><br>
-                                <span class="font-bold">acabaram</span><br>
-                                <span class="font-bold">De chegar</span>
-                            </p>
-
-                            <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
-                                VER TODOS
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+   <div class="relative rounded-xl overflow-hidden max-w-64 min-h-96">
+       <img src="/public/img/canecaComFundo.png" alt="Imagem decorativa"
+            class="w-full h-full object-cover">
+       <div class="absolute inset-0 p-3 bg-black bg-opacity-40"></div>
+       <div class="absolute inset-0 flex flex-col justify-center items-start px-6 text-white space-y-3">
+           <p class="text-3xl font-medium leading-tight">
+               Confira os<br>
+               <span class="font-bold">Produtos</span><br>
+               <span class="font-bold">Que</span><br>
+               <span class="font-bold">acabaram</span><br>
+               <span class="font-bold">De chegar</span>
+           </p>
+           <button class="mt-4 px-5 py-2 border border-white rounded-lg text-sm font-semibold">
+               VER TODOS
+           </button>
+       </div>
+   </div>
+</div>
+</div>
 
             <img class=" scale-[2] h-full object-cover -translate-y-32 ml-44"
                 src="/public/img/cadeira-removebg-preview.png" alt="Imagem Centralizada">

@@ -183,3 +183,47 @@ const observer = new MutationObserver((mutationsList) => {
 });
 
 observer.observe(dropdown, { attributes: true });
+
+const departamentosContainer = document.getElementById('listaDepartamentos');
+const totalDepartamentos = 13;
+
+for (let i = 0; i < totalDepartamentos; i++) {
+    departamentosContainer.innerHTML += `
+        <div class="flex justify-between gap-10 hover:text-[#005CFF] cursor-pointer">
+            <p class="">Departamento</p>
+            <i class="bi bi-caret-right"></i>
+        </div>
+    `;
+}
+
+// Gerar as colunas de categorias
+const colunasCategoriasContainer = document.getElementById('colunasCategorias');
+const colunas = 3;
+const categoriasPorColuna = 8;
+
+for (let i = 0; i < colunas; i++) {
+    const coluna = document.createElement('div');
+    coluna.className = 'flex flex-col gap-5 flex-1';
+
+    for (let j = 0; j < categoriasPorColuna; j++) {
+        coluna.innerHTML += `<p class="hover:text-[#005CFF] cursor-pointer">categoria</p>`;
+    }
+
+    colunasCategoriasContainer.appendChild(coluna);
+}
+
+
+const submenuColunasContainer = document.getElementById('submenuColunasCategorias');
+const totalColunas = 3;
+const categoriasPorColuna2 = 8;
+
+for (let i = 0; i < totalColunas; i++) {
+    const coluna = document.createElement('div');
+    coluna.className = 'flex flex-col gap-5';
+
+    for (let j = 0; j < categoriasPorColuna2; j++) {
+        coluna.innerHTML += `<p class="hover:text-[#005CFF] cursor-pointer">categoria</p>`;
+    }
+
+    submenuColunasContainer.appendChild(coluna);
+}
