@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Produto base que será usado para gerar os slides
   const produtoBase = {
-    img: "/public/img/modelo.png",
+    img: "public/img/modelo.png",
     titulo: "Lorem ipsum dolor sit amet consectetuer adipiscing elit",
     precoAntigo: "R$ 100,00",
     precoNovo: "R$79,90",

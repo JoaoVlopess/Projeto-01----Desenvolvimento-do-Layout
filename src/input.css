@@ -1,24 +1,24 @@
-@tailwind utilities;
+@import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-/* Estilos customizados com layer */
-@layer utilities {
-  .scrollbar-custom::-webkit-scrollbar {
+/* No Tailwind v4, você pode usar CSS puro ou diretivas de utilitários */
+@utility scrollbar-custom {
+  &::-webkit-scrollbar {
     width: 8px;
     background-color: #fef2f2;
   }
 
-  .scrollbar-custom::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background-color: #60a5fa;
     border-radius: 6px;
   }
 
-  .scrollbar-custom::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track {
     background-color: #f1f5f9;
   }
 
-  .scrollbar-custom::-webkit-scrollbar-button {
+  &::-webkit-scrollbar-button {
     display: none;
   }
 }
